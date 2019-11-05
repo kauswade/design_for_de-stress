@@ -1,11 +1,10 @@
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -99,7 +98,6 @@ const useStyles = makeStyles(theme => ({
 
 const Navbar = (props) => {
     const classes = useStyles();
-    const theme = useTheme();
     const [openDrawer, setOpen] = React.useState(false);
 
     const handleDrawerOpen = () => {
@@ -108,18 +106,6 @@ const Navbar = (props) => {
 
     const handleDrawerClose = () => {
         setOpen(false);
-    };
-
-    const [auth] = React.useState(true);
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const open = Boolean(anchorEl);
-
-    const handleMenu = event => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
     };
 
     return (

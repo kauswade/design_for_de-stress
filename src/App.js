@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 import Home from './components/Home';
+import Temp from './components/Temp';
 
 
 class App extends Component {
@@ -24,7 +25,9 @@ class App extends Component {
             <Signin />
           ) : this.state.currentPage === "signup" ? (
             <Signup />
-          ) : <Home />
+          ) : this.state.currentPage === "home" ? (
+            <Home />
+          ) : <Temp />
         }
       </div>
     );
